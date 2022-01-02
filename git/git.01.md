@@ -1,3 +1,0 @@
-dd
-dag
-gg
