@@ -77,3 +77,28 @@ for row in result['response']['body']['items']['item']:
   print('지역:', row['gubun'])
   print('사망자 수:', row['deathCnt'])
   print('확진자 수:', row['defCnt'])
+
+# 날짜를 키로 하고 지역별 확진자를 값으로 하는 딕셔너리
+confirmed = {}
+for row in result['response']['body']['items']['item']:
+  # print( row['createDt'].split(' ')[0] )
+  key = row['createDt'].split(' ')[0]
+
+  # 해당 날짜의 가장 마지막 지역의 확진자 수가 값으로 들어가게 됩니다.
+  # 해당 날짜의 키가 존재하지 않으면 딕셔너리를 추가
+  if key in confirmed.keys():
+    confirmed[key][row['gubun']] = row['defCnt']
+  else:
+    confirmed[key] = {}
+    confirmed[key][row['gubun']] = row['defCnt']
+
+
+## 조금 더 쉽게 하려면 `defaultDict`를 사용하면 됩니다. 
+from collections import defaultdict
+confirm = defaultdict(dict)
+
+for row in result['response']['body']['items']['item']:
+  key = row['createDt'].split(' ')[0]
+  locate = row['gubun']
+  if locate != '검역' and locate != '합계':
+    confirm[key][locate] = row['defCnt']
