@@ -46,3 +46,29 @@ response = requests.post( url, data=jsonData, headers=header )
 print( response.status_code )
 
 response.json()
+
+
+
+url = 'https://openapi.naver.com/v1/datalab/search'
+header = {
+  'X-Naver-Client-Id': clientID,
+  'X-Naver-Client-Secret': clientSecret,
+  'Content-Type': 'application/json'
+}
+
+data = {
+  'startDate':'2021-01-01',
+  'endDate':'2021-12-31',
+  'timeUnit':'month',
+  'keywordGroups':[
+    {
+      'groupName':'후보자',
+      'keywords':['이재명', '윤석열', '허경영', '심상정', '안철수']
+    },
+    {
+      'groupName':'정당',
+      'keywords':['국민의힘', '더불어민주당', '국가혁명당', '국민의당', '정의당']
+    }
+  ],
+  'ages':['3', '4', '5', '6', '7', '8', '9', '10', '11']
+}

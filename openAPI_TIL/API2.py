@@ -102,3 +102,4 @@ for row in result['response']['body']['items']['item']:
   locate = row['gubun']
   if locate != '검역' and locate != '합계':
     confirm[key][locate] = row['defCnt']
+
