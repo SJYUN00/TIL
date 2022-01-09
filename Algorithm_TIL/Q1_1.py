@@ -1,4 +1,5 @@
 ARRAY_LENGTH = 5  # 배열의 행과 열 크기(고정)
+#배열의 행과 열?
 
 def replaceData(numData): # numData	2차원 정수 배열
     retData = [] # 조건에 따라서 전처리된 2차원 배열
