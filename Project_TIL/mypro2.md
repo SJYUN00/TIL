@@ -76,3 +76,5 @@ sat_avg.iloc[:, 1:] = sat_avg.iloc[:, 1:].round(decimals=2) #소수점 둘째자
 
 # 파일을 저장합니다
 pd.DataFrame(sat_avg).to_csv('/content/drive/MyDrive/프로젝트/[D9&10] 데이터시각화 프로젝트_4조/윤성준/삶의만족도(최종)', index=False)
+
+데이터 전처리과정이 복잡했지만? 필요한 부분 누락없이 한다면 할만한 작업인듯?하다.
