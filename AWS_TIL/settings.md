@@ -56,3 +56,5 @@ SPARK_HOME = /opt/spark
 ## Python 3.8 버전의 pySpark 실행
 ``/opt/spark$ pyspark``
 pyspark 만 입력해주면 된다.
+
+AWS 가상환경 셋팅은 이것으로 마무리된다.
