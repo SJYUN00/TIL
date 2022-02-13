@@ -13,4 +13,4 @@
 ## optimizer
 ## 시그모이드 함수
 ## k-means
-## BOW
+## BOWz
