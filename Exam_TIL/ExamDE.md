@@ -1,4 +1,5 @@
 ## Python 주요 packages
+## optimizer란?
 ## 머신러닝 4가지 Cycle
 ## INDEX
 ## 평가, 평가지표 공식
