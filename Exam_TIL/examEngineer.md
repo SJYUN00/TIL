@@ -135,7 +135,7 @@
    
 
 3. DML : select, insert, delete, update
-
+c
    
 
 4. DCL : grant, revoke, commit, rollback
