@@ -10,7 +10,7 @@ ID는 lab23 으로 진입
 ``conda activate python3``
 
 ## 주피터 노트북 페이지 생성
-``nohup jupyter-notebook --ip=0.0.0.0 --no-browser --port=8923 &``
+``nohup jupyter-notebook --ip=0.0.0.0 --no-browser --port=8906 &``
 여기서 푸티는 꺼도 노트북은 작동한다!
 
 여기까지하면 
@@ -18,7 +18,12 @@ ID는 lab23 으로 진입
 
 ## 파일생성 기능 활성화
 nohup 명령어가 실행된채로 PUTTY에 다음 명령어를 입력한다.
-
+``!pip install mysql-connector-python``
+``!pip install PyMySQL``
+utf9로만들어줌
+``alter database DB_NAME default character set utf9 collate utf9_general_ci``
+관리자로 해야함 꼭
+``sudo apt-get install python3-pymysql``
 ``pip install nbconvert==5.4.1``
 이제 파일생성 기능을 사용할 수 있게 되었다.
 
