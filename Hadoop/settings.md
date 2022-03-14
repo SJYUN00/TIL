@@ -11,3 +11,23 @@
 - 163.98. 설정 후 done
 -    ?
 - 재설정 필요
+
+
+
+## * Hadoop 3.3.1(2.x...)
+Core Functions
+- HDFS (NameNode, DataNode)
+- YARN (ResourceManager, NodeManager)
+- Batch Processing (MapReduce) -> Java -> jar
+
+server01 192.168.10.100 NameNode, ResourceManager, JVM
+server02 192.168.10.101 DataNode, NodeManager, JVM
+server03 192.168.10.102 DataNode, NodeManager, JVM
+
+MyNetwork : 192.168.10.0/24
+            192.168.10.0 ~ 255
+Route : 192.168.10.1
+DNS : 168.126.63.1
+
+VirtualBox
+=> single => NameNode, DataNode, ResourceManager, NodeManager
