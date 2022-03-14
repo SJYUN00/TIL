@@ -31,3 +31,41 @@ DNS : 168.126.63.1
 
 VirtualBox
 => single => NameNode, DataNode, ResourceManager, NodeManager
+
+## ServerBase 계정
+id : hadoop
+pw : 1234
+
+ifconfig
+
+inet 192.168.10.100 이어야함
+
+sudo apt-get update
+
+ip chage -> 192.168.10.100
+hostname change -> server01
+hosts change(DNS) -> ....
+java installed
+
+cd /etc/
+cat /etc/hostname
+sudo nano /etc/hostname
+
+cat /etc/hosts
+sudo nano /etc/hosts
+127.0.1.1 삭제
+localhost는 냅두고 아래 서버 다 지우고 server01부터 03까지 적어줌
+
+ping hosts로 확인
+
+reboot
+
+host(mypc) - > guest
+
+localhost:13100 -> 192.168.10.100:22
+
+cd /usr/local
+sudo mv jdk1.8.0_311/ /usr/local
+sudo chown -R root:root jdk1.8.0_311/
+sudo ln -s jdk1.8.0_311/ java
+
