@@ -36,41 +36,41 @@ VirtualBox
 id : hadoop
 pw : 1234
 
-ifconfig
+``ifconfig``
 
 inet 192.168.10.100 이어야함
 
-sudo apt-get update
+``sudo apt-get update``
 
 ip chage -> 192.168.10.100
 hostname change -> server01
 hosts change(DNS) -> ....
 java installed
 
-cd /etc/
-cat /etc/hostname
-sudo nano /etc/hostname
+``cd /etc/``
+``cat /etc/hostname``
+``sudo nano /etc/hostname``
 
-cat /etc/hosts
-sudo nano /etc/hosts
+``cat /etc/hosts``
+``sudo nano /etc/hosts``
 127.0.1.1 삭제
 localhost는 냅두고 아래 서버 다 지우고 server01부터 03까지 적어줌
 
-ping hosts로 확인
+``ping hosts``로 확인
 
-reboot
+``reboot``
 
 host(mypc) - > guest
 
 localhost:13100 -> 192.168.10.100:22
 
-cd /usr/local
-sudo mv jdk1.8.0_311/ /usr/local
-sudo chown -R root:root jdk1.8.0_311/
-sudo ln -s jdk1.8.0_311/ java
+``cd /usr/local``
+``sudo mv jdk1.8.0_311/ /usr/local``
+``sudo chown -R root:root jdk1.8.0_311/``
+``sudo ln -s jdk1.8.0_311/ java``
 
 
-vi .profile 맨 밑에 추가
+``vi .profile`` 맨 밑에 추가
   export JAVA_HOME=/usr/local/java
   export HADOOP_HOME=/home/hadoop/hadoop
   export PATH=$PATH:$JAVA_HOME/bin
@@ -90,3 +90,16 @@ vi .profile 맨 밑에 추가
 
 cat .profile 로 확인
 source .profile
+
+``wget https://dlcdn.apache.org/hadoop/common/hadoop-3.3.2/hadoop-3.3.2.tar.gz``로 하둡 설치
+
+``tar xvfz hadoop-3.3.2.tar.gz`` 로 압축해제
+
+``cd ~/hadoop/etc/hadoop``
+``vi hadoop-env.sh``에서
+``export JAVA_HOME=/usr/java/``
+cd ~/hadoop에서 설정할 부분
+  $ mkdir input
+  $ cp etc/hadoop/*.xml input
+  $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.2.jar grep input output 'dfs[a-z.]+'
+  $ cat output/*
