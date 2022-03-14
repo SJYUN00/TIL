@@ -69,3 +69,24 @@ sudo mv jdk1.8.0_311/ /usr/local
 sudo chown -R root:root jdk1.8.0_311/
 sudo ln -s jdk1.8.0_311/ java
 
+
+vi .profile 맨 밑에 추가
+  export JAVA_HOME=/usr/local/java
+  export HADOOP_HOME=/home/hadoop/hadoop
+  export PATH=$PATH:$JAVA_HOME/bin
+  export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/bin:$JAVA_HOME/lib/tools.jar
+  export HADOOP_MAPRED_HOME=$HADOOP_HOME
+  export HADOOP_COMMON_HOME=$HADOOP_HOME
+  export HADOOP_HDFS_HOME=$HADOOP_HOME
+  export HADOOP_YARN_HOME=$HADOOP_HOME
+  export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+  export HADOOP_LOG_DIR=$HADOOP_HOME/logs
+  export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+  export HADOOP_OPTS="-Djava.library.path=$HADOOP_COMMON_LIB_NATIVE_DIR"
+  export HADOOP_PID_DIR=${HADOOP_HOME}/pids
+  export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin:
+  export CLASSPATH=$CLASSPATH:$HADOOP_HOME/lib/*
+  export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+cat .profile 로 확인
+source .profile
