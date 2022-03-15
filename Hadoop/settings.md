@@ -103,3 +103,53 @@ cd ~/hadoop에서 설정할 부분
   $ cp etc/hadoop/*.xml input
   $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.2.jar grep input output 'dfs[a-z.]+'
   $ cat output/*
+
+
+
+## 2일차 하둡 활용 
+
+1. putty 로그인
+ifconfig
+java -version
+javac -version
+which java
+
+rm -rf input
+rm -rf output
+mkdir input
+cd input
+touch mydata.txt
+
+2. dfs로 시작하는 문자열 탐색
+  
+``bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.2.jar grep input output 'dfs[a-z.]+'``
+
+
+3. 설정상 바꿔야하는 파일
+
+etc/hadoop/core-site.xml:
+
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://localhost:9000</value>
+    </property>
+</configuration>
+
+etc/hadoop/hdfs-site.xml:
+
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+</configuration>
+
+4. ssh localhost 패스워드 없이 진입하기 위해
+   
+   ``ssh localhost``입력 후 yes
+
+5. 키생성
+  $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+  $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys  (overwrite가 아닌 append)
+  $ chmod 0600 ~/.ssh/authorized_keys
