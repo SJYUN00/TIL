@@ -108,6 +108,10 @@ cd ~/hadoop에서 설정할 부분
 
 ## 2일차 하둡 활용 
 
+
+하둡 설치 설정 가이드
+https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html 
+
 1. putty 로그인
 ifconfig
 java -version
@@ -145,6 +149,32 @@ etc/hadoop/hdfs-site.xml:
     </property>
 </configuration>
 
+etc/hadoop/mapred-site.xml:
+
+<configuration>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+    <property>
+        <name>mapreduce.application.classpath</name>
+        <value>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*:$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*</value>
+    </property>
+</configuration>
+
+etc/hadoop/yarn-site.xml:
+
+<configuration>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.env-whitelist</name>
+        <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_HOME,PATH,LANG,TZ,HADOOP_MAPRED_HOME</value>
+    </property>
+</configuration>
+
 4. ssh localhost 패스워드 없이 진입하기 위해
    
    ``ssh localhost``입력 후 yes
@@ -153,3 +183,36 @@ etc/hadoop/hdfs-site.xml:
   $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
   $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys  (overwrite가 아닌 append)
   $ chmod 0600 ~/.ssh/authorized_keys
+
+6. 구동
+   
+home directory에서 
+source .profile
+cd hadoop
+jps
+
+``sbin/start-dfs.sh`` 로 시작
+
+sudo systemctl status ufw
+sudo systemctl stop ufw
+sudo systemctl disable ufw (부팅시 자동시작 방지)
+
+
+
+7. 디렉생성
+
+bin/hdfs dfs -mkdir input
+bin/hdfs dfs -put input/* input2
+bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.2.jar grep input output 'a[a-z.]+'
+
+8. 포맷하기
+
+sudo rm -rf /tmp/*
+hdfs namenode -format
+
+
+## 서버 복제하기
+
+MAC주소 정책: 모든 네트워크 어댑터의 새 MAC주소생성 옵션 선택해야함 필수~!
+
+## server01을 
