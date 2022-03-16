@@ -215,4 +215,13 @@ hdfs namenode -format
 
 MAC주소 정책: 모든 네트워크 어댑터의 새 MAC주소생성 옵션 선택해야함 필수~!
 
-## server01을 
+## server01에서 셋팅한 xml파일을 server02,server03에 복사
+
+``scp * server02:/home/hadoop/hadoop/etc/hadoop/`` 각 서버에 복사
+``scp * server03:/home/hadoop/hadoop/etc/hadoop/``
+
+``ssh server02 $JAVA_HOME:~/etc/jps`` 로 복사되었는지 확인.
+``ssh server03 $JAVA_HOME:~/etc/jps``
+
+stop-all.sh
+start-all.sh
