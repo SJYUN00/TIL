@@ -16,8 +16,8 @@ import multiprocessing as mp
 from multiprocessing.pool import MaybeEncodingError
 
 #매일경제 검색 url
-start_date = "y1=2019&m1=03&d1=01"
-end_date = "y2=2019&m2=08&d2=31"
+start_date = "y1=2021&m1=09&d1=01"
+end_date = "y2=2022&m2=03&d2=21"
 url = "https://find.mk.co.kr/new/search.php?pageNum={}&cat=&cat1=&media_eco=&pageSize=10&sub=all&dispFlag=OFF&page=news&s_kwd=%C1%D6%BD%C4&s_page=news&go_page=&ord=1&ord1=1&ord2=0&s_keyword=%C1%D6%BD%C4&period=p_direct&s_i_keyword=%C1%D6%BD%C4&s_author=&{}&{}&ord=1&area=ttbd"
 
 def get_list(idx) :
