@@ -177,3 +177,136 @@ scp -r kafka_2.13-2.6.3 server02:~/
 ln -s kafka_2.13-2.6.3 kafka
 
 zookeeper.connect=server01:2181,server02:2181,server03:2181
+
+
+## 3.23
+nano all_check.sh
+chmod 777 all_check.sh
+
+nano all_start.sh
+#!/bin/bash
+echo 'start server01, server02, server03'
+/home/hadoop/hadoop/sbin/start-all.sh
+/home/hadoop/spark/sbin/start-all.sh
+/home/hadoop/all_kafka_start.sh
+echo 'check server01, server02, server03'
+/home/hadoop/all_check.sh
+echo 'start jupyter notebook'
+#source ~/myenv/bin/activate
+#jupyter notebook
+
+chmod 777 all_start.sh
+
+nano all_kafka_start.sh
+
+kill -9 pid
+ 
+
+bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server server01:9092,server02:9092,server03:9092
+
+bin/kafka-topics.sh --describe --topic quickstart-events --bootstrap-server server01:9092
+
+bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server server01:9092
+
+
+bin/connect-distributed.sh config/connect-distributed.properties
+
+nano connect-distributed.properties
+
+rest api
+
+http://localhost:8083
+http://localhost:8083/connectors
+http://localhost:8083/connector-plugins
+
+source, sink
+
+https://docs.confluent.io/home/overview.html
+https://www.confluent.io/hub/confluentinc/kafka-connect-jdbc?_ga=2.80240916.2020772003.1647992663-1554548599.1647992663&_gac=1.48690644.1647998716.Cj0KCQjw5-WRBhCKARIsAAId9FnULJ7BdCWlLPB3FSLAuDE7EUaZV9JXTb3sl_XIWk8D-SBXU2-e_0MaAhVqEALw_wcB
+
+cd plugins
+sudo apt install unzip
+/home/hadoop/kafka/plugins
+
+curl -X GET http://localhost:8083/connector-plugins
+
+
+curl --request POST 'localhost:8083/connectors' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "file-source-connector",
+    "config": {
+        "connector.class": "org.apache.kafka.connect.file.FileStreamSourceConnector",
+        "tasks.max": "1",
+        "topic": "connect-test",
+        "file": "/home/hadoop/test.txt"
+    }
+}'
+
+curl -X GET http://localhost:8083/connectors/file-source-connector
+curl -X GET http://localhost:8083/connectors
+
+curl -X DELETE http://localhost:8083/connectors/file-source-connector
+
+bin/kafka-console-consumer.sh --topic connect-test --from-beginning --bootstrap-server server01:9092
+
+curl -X GET http://localhost:8083/connectors/file-source-connector/status
+
+curl -X GET http://localhost:8083/connectors/file-source-connector/config
+
+mysql source -> kafka -> text sink
+
+curl -X GET http://localhost:8083/connector-plugins
+
+use testdb
+
+CREATE TABLE IF NOT EXISTS test (
+  id int NOT NULL PRIMARY KEY,
+  name varchar(100)
+);
+
+INSERT INTO test(id, name) values (1, 'user1');
+INSERT INTO test(id, name) values (2, 'user2');
+INSERT INTO test(id, name) values (3, 'user3');
+INSERT INTO test(id, name) values (4, 'user4');
+INSERT INTO test(id, name) values (5, 'user5');
+
+INSERT INTO test(id, name) values (6, 'user6');
+
+INSERT INTO test(id, name) values (7, 'user7');
+INSERT INTO test(id, name) values (8, 'user8');
+
+
+curl --request POST 'localhost:8083/connectors' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "name" : "mysql-connect",
+  "config" : {
+    "connector.class" : "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "connection.url" : "jdbc:mysql://192.168.10.103:3306/testdb",
+    "connection.user" : "test",
+    "connection.password" : "Pa$$w0rd",
+    "mode": "incrementing",
+    "incrementing.column.name" : "id",
+    "table.whitelist" : "test",
+    "topic.prefix" : "mysql_connect_",
+    "tasks.max" : "3"
+  }
+}'
+
+curl --request POST 'localhost:8083/connectors' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "name" : "mytext-sink",
+  "config" : {
+    "connector.class" : "org.apache.kafka.connect.file.FileStreamSinkConnector",
+    "file" : "/home/hadoop/mytest.txt",
+    "topics" : "mysql_connect_test"
+  }
+}'
+
+test, Pa$$w0rd
+
+source(mysql) -> kafka -> sink(text file)
+source(....) -> kafka -> sink(database...)
+kafka-python -> kafka -> kafka-python
