@@ -310,3 +310,5 @@ test, Pa$$w0rd
 source(mysql) -> kafka -> sink(text file)
 source(....) -> kafka -> sink(database...)
 kafka-python -> kafka -> kafka-python
+
+kafka 셋팅 마무리..
