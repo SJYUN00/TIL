@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Rubic landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Rubic Landing page | Free Bootstrap 4.1 landing page</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Rubic main styles --> 
+	<link rel="stylesheet" href="assets/css/rubic.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><strong class="text-primary">STOCK</strong><span class="text-light">Price</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">측정</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#review">주가예측</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">UsedStack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-dark shadow-none ml-md-4" href="components.html">Components</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="header d-flex justify-content-center">
+        <div class="container">
+            <div class="row h-100 align-items-center">
+                <div class="col-md-7">
+                    <div class="header-content">
+                        <h3 class="header-title"><strong class="text-primary">STOCK</strong><span>Price</span></h3>
+                        <h4 class="header-subtitle">ABOUT KOSPI</h4>
+                        <p> 시가총액 TOP10 종목 추천</p>
+                    </div>  
+                </div>
+           </div>  
+        </div>
+    </header>
+    <section class="section" id="about">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">What is STOCKPrice APP?</h6>
+            <p class="mb-5 pb-4">머신러닝기반 주가변동 예측서비스</p>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-light-bulb"></i></div>
+                    <h6 class="title mb-3">Thoughtful Design</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eveniet laborum, vero doloremque sunt tempora.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-paint-bucket"></i></div>
+                    <h6 class="title mb-3">WELL CRAFTED</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eveniet laborum, vero doloremque sunt tempora.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="circle-100 mb-3"><i class="ti-marker-alt"></i></div>
+                    <h6 class="title mb-3">EASY TO CUSTOMIZE</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eveniet laborum, vero doloremque sunt tempora.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-lg-8">
+                    <div class="tabs-container">
+                        <ul class="nav tab-nav" id="pills-tab">
+                            <li class="item">
+                                <a class="link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"aria-selected="true">삼성전자</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"aria-selected="false">SK하이닉스</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"aria-selected="false">NAVER</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-lg-tab" data-toggle="pill" href="#pills-lg"aria-selected="false">삼성바이오로직스</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-doosan-tab" data-toggle="pill" href="#pills-doosan"aria-selected="false">카카오</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-hyundai-tab" data-toggle="pill" href="#pills-hyundai"aria-selected="false">현대자동차</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-lgchemical-tab" data-toggle="pill" href="#pills-lgchemical"aria-selected="false">LG화학</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-sdi-tab" data-toggle="pill" href="#pills-sdi"aria-selected="false">삼성SDI</a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-posco-tab" data-toggle="pill" href="#pills-posco"aria-selected="false">POSCO홀딩스<a>
+                            </li>
+                            <li class="item">
+                                <a class="link" id="pills-kb-tab" data-toggle="pill" href="#pills-kb"aria-selected="false">KB금융</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="pills-home">
+                                <h4 class="title">삼성전자</h4>
+                                <canvas id="chart" width="400" height="400"></canvas>
+                                <script>
+                                    const ctx = document.getElementById('myChart').getContext('2d');
+                                    const myChart = new Chart(ctx, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                            datasets: [{
+                                                label: '# of Votes',
+                                                data: [12, 19, 3, 5, 2, 3],
+                                                backgroundColor: [
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255, 99, 132, 1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: true
+                                                }
+                                            }
+                                        }
+                                    });
+                                    </script>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile">
+                                <h4 class="title">SK하이닉스</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit unde totam nostrum, sunt accusamus in delectus aspernatur, nisi eligendi ipsum eum! Aspernatur recusandae nihil rem qui quam vero, saepe inventore tempora? Necessitatibus corporis, nam minus reiciendis rerum? Eius voluptatem facilis, vitae minima modi corrupti ullam, temporibus vel eum fugit inventore obcaecati provident ratione, ab aliquid perspiciatis commodi, autem in nemo.</p>
+                                <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing.</strong></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et officia neque odio blanditiis aspernatur cum cumque error?</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact">
+                                <h4 class="title">NAVER</h4>
+                                <p>Consectetur amet architecto, temporibus, debitis impedit dolore eius. Enim alias beatae architecto iusto incidunt pariatur reprehenderit impedit ipsum ex at deserunt, inventore corrupti rerum eius obcaecati. Itaque repellendus illum aut beatae ex quasi doloremque voluptatem. Numquam at possimus, obcaecati, voluptas aut vel nam recusandae pariatur error illum quaerat sunt! Ipsam rerum enim hic atque nemo debitis, voluptate obcaecati inventore culpa. Odit adipisci eos natus fugiat. Id, deserunt qui aliquam? Provident tempora repellat, repellendus consequatur quia dolor at dolore temporibus esse in rem ea necessitatibus quo nesciunt eos a dolorum voluptates, tenetur non eius quasi! Autem provident amet, maiores tenetur, eveniet dicta, laborum odio velit sint consequatur beatae nemo at! Aperiam magnam eveniet rerum, optio consequuntur quas maiores ullam necessitatibus nesciunt.</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-lg">
+                                <h4 class="title">삼성바이오로직스</h4>
+                                <p>LG, consectetur adipisicing elit. Laboriosam repellendus esse consectetur possimus voluptatem veniam quas ducimus ullam deleniti? Possimus, unde eveniet suscipit perspiciatis dicta numquam voluptate fuga id, optio.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et officia neque odio blanditiis aspernatur cum cumque error?</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-doosan">
+                                <h4 class="title">카카오</h4>
+                                <p>Doosan consectetur adipisicing elit. Laboriosam repellendus esse consectetur possimus voluptatem veniam quas ducimus ullam deleniti? Possimus, unde eveniet suscipit perspiciatis dicta numquam voluptate fuga id, optio.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et officia neque odio blanditiis aspernatur cum cumque error?</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-hyundai">
+                                <h4 class="title">현대자동차</h4>
+                                <p>Doosan consectetur adipisicing elit. Laboriosam repellendus esse consectetur possimus voluptatem veniam quas ducimus ullam deleniti? Possimus, unde eveniet suscipit perspiciatis dicta numquam voluptate fuga id, optio.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et officia neque odio blanditiis aspernatur cum cumque error?</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-lgchemical">
+                                <h4 class="title">LG화학</h4>
+                                <p>Doosan consectetur adipisicing elit. Laboriosam repellendus esse consectetur possimus voluptatem veniam quas ducimus ullam deleniti? Possimus, unde eveniet suscipit perspiciatis dicta numquam voluptate fuga id, optio.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et officia neque odio blanditiis aspernatur cum cumque error?</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-sdi">
+                                <h4 class="title">삼성SDI<h4>
+                                <p>Doosan consectetur adipisicing elit. Laboriosam repellendus esse consectetur possimus voluptatem veniam quas ducimus ullam deleniti? Possimus, unde eveniet suscipit perspiciatis dicta numquam voluptate fuga id, optio.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et officia neque odio blanditiis aspernatur cum cumque error?</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-posco">
+                                <h4 class="title">POSCO홀딩스</h4>
+                                <p>Doosan consectetur adipisicing elit. Laboriosam repellendus esse consectetur possimus voluptatem veniam quas ducimus ullam deleniti? Possimus, unde eveniet suscipit perspiciatis dicta numquam voluptate fuga id, optio.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et officia neque odio blanditiis aspernatur cum cumque error?</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-kb">
+                                <h4 class="title">KB금융</h4>
+                                <p>Doosan consectetur adipisicing elit. Laboriosam repellendus esse consectetur possimus voluptatem veniam quas ducimus ullam deleniti? Possimus, unde eveniet suscipit perspiciatis dicta numquam voluptate fuga id, optio.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et officia neque odio blanditiis aspernatur cum cumque error?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block align-self-center">
+                    <img src="assets/imgs/eiffel-tower.svg" alt="" class="w-100 tower">
+                </div>
+            </div>                  
+        </div>                      
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-5 align-self-center mb-4 mb-md-0">
+                    <img src="assets/imgs/img.jpg" alt="" class="shadow w-100">
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <h6 class="title">Section with Media list</h6>
+                    <p>Consectetur adipisicing elit. Quam odit odio et neque perferendis perspiciatis magnam hic ut facilis possimus!consectetur adipisicing elit. Impedit repellat ipsam quaerat error odit commodi.</p>
+                    <ul class="list-unstyled mt-4">
+                        <li class="media">
+                            <div class="circle-40 mr-3 mt-1"><i class="ti-gift"></i></div>
+                            <div class="media-body">
+                                <h6 class="mb-2">List-based media object</h6>
+                                <p>Cras sit amet nibh libero, in gravida nulla.</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="circle-40 mr-3 mt-1"><i class="ti-face-smile"></i></div>
+                            <div class="media-body">
+                                <h6 class="mb-2">Another one</h6>
+                                <p>Cras in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <div class="circle-40 mr-3 mt-1"><i class="ti-microphone"></i></div>
+                            <div class="media-body">
+                                <h6 class="mb-2">One more</h6>
+                                <p>Nulla vel metus scelerisque ante sollicitudin. Cras purus odio.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-between">               
+                <div class="col-md-6 col-lg-5 align-self-center">
+                    <h6 class="title">Standard Picture Section</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio ut voluptatum ipsum. Rerum fuga cumque illo nihil nobis vero ducimus, animi voluptatum nemo facilis quae quia odit accusantium doloremque? Totam.</p>
+                    <p><strong>Adipisicing elit. Quos ad doloribus numquam cum odio dolorem!</strong></p>
+                    <p>Rerum fuga cumque consectetur adipisicing elit. Pariatur quis ipsum facere officiis magni ullam quasi fuga magnam dicta quas.</p>                    
+                </div>
+                <div class="col-md-5 mt-4 mt-md-0">
+                    <img src="assets/imgs/img1.jpg" alt="" class="shadow w-100">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="pricing">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">PRICING OPTIONS</h6>
+            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="row pt-5">
+                <div class="col-lg-4">
+                    <a href="javascript:void(0)" class="pricing-card">
+                        <div class="head">Basib</div>
+                        <div class="body">
+                            <h1><small>$</small>0</h1>
+                            <p>Free for Life</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">1 GB OF SPACE</li>
+                            <li class="list-group-item">10 GB OF BANDWIDTH</li>
+                            <li class="list-group-item">3 WEBSITES</li>
+                            <li class="list-group-item">BASIC CUSTOMIZATION</li>
+                            <li class="list-group-item">WORDPRESS INTEGRATION</li>
+                            <li class="list-group-item">EMAIL SUPPORT</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="javascript:void(0)" class="pricing-card popular">
+                        <div class="head">Professional</div>
+                        <div class="body">
+                            <h1><small>$</small>14.99</h1>
+                            <p>Monthly Payment</p>
+                        </div>
+                        <div class="popular-item">OUR MOST POPULAR</div>
+                        <ul class="list-group">
+                            <li class="list-group-item">5 GB OF SPACE</li>
+                            <li class="list-group-item">50 GB OF BANDWIDTH</li>
+                            <li class="list-group-item">10 WEBSITES</li>
+                            <li class="list-group-item">ADVANCED CUSTOMIZATION</li>
+                            <li class="list-group-item">WORDPRESS INTEGRATION</li>
+                            <li class="list-group-item">EMAIL SUPPORT</li>
+                        </ul>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="javascript:void(0)" class="pricing-card">
+                        <div class="head">Enterprise</div>
+                        <div class="body">
+                            <h1><small>$</small>99</h1>
+                            <p>Monthly Payment</p>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">UNLIMITED OF SPACE</li>
+                            <li class="list-group-item">UNLIMITED BANDWIDTH</li>
+                            <li class="list-group-item">120 WEBSITES</li>
+                            <li class="list-group-item">ADVANCED CUSTOMIZATION</li>
+                            <li class="list-group-item">WORDPRESS INTEGRATION</li>
+                            <li class="list-group-item">EMAIL SUPPORT</li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="review">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">WHAT OUR CUSTOMERS ARE SAYING</h6>
+            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="testmonial">                        
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar1.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">Emma Re</h6>
+                                <p class="text-muted">Web Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testmonial">                        
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar2.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">John Doe</h6>
+                                <p class="text-muted">Freelancer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testmonial">                        
+                        <p class="description"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, eaque, repellat. Corporis facilis reprehenderit, cupiditate.</i></p>
+                        <div class="media">
+                            <img class="mr-3" src="assets/imgs/avatar3.jpg" width="60" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h6 class="title">Emily Roe</h6>
+                                <p class="text-muted">Graphic Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+            </div>
+        </div>
+    </section>
+    <section class="section has-img-bg text-center">
+        <div class="container">
+            <h6 class="display-3 has-line">STYLISH AXURE DESIGN</h6>
+            <h5 class="mb-5 font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, itaque.</h5>
+            <button class="btn btn-outline-light btn-flat">Download</button>
+        </div>
+    </section>
+    <section class="section" id="contact">
+        <div class="container text-center">
+            <h6 class="display-4 has-line">CONTACT US</h6>
+            <p class="mb-5 pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+            <form>
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="form-group pb-1">
+                            <input type="text" class="form-control" required placeholder="Name">            
+                        </div>
+                        <div class="form-group pb-1">
+                            <input type="email" class="form-control" required placeholder="Email">          
+                        </div>
+                        <div class="form-group ">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <textarea name="" id="" cols="" rows="7" class="form-control" required placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary btn-block" value="Send Message">
+            </form>
+        </div>
+    </section>
+    <footer class="footer py-4 bg-dark text-light"> 
+        <div class="container text-center">
+            <p class="mb-4 small">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com">DevCRUD</a></p>
+            <div class="social-links">
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            </div>
+        </div>
+    </footer>
+	
+	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap 3 affix -->
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Rubic js -->
+    <script src="assets/js/rubic.js"></script>
+
+</body>
+</html>
