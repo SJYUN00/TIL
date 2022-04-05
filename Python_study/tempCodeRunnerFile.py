@@ -1,0 +1,2 @@
+
+strlen = len(S)
