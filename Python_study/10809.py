@@ -40,3 +40,5 @@ for i in S:
 # B = chr(b)
 # print(B)
 # ['a', 'd', 'c', , , 'e']
+
+
